@@ -1,0 +1,8 @@
+{
+  "test_required_file_and_sheets_exist": 20,
+  "test_intake_summary_values": 15,
+  "test_visual_blockers_include_current_issue_ids": 20,
+  "test_visual_blocker_details_are_correct": 20,
+  "test_tracking_noise_is_separated": 15,
+  "test_final_review_decision": 10
+}

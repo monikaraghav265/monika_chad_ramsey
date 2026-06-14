@@ -1,0 +1,1 @@
+﻿Chad has the CareFlow intake cleanup sitting in the middle of his usual design pile, and before the review he wants the blocker check cleaned up into one place. The current intake issues, design notes, and tracking scraps should point to the same flow instead of pulling in nearby referral noise. Put the final triage into an Excel file named careflow_accessibility_triage.xlsx.

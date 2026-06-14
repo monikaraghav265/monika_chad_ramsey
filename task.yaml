@@ -1,0 +1,44 @@
+task_id: chad_careflow_accessibility_triage
+persona: Chad Ramsey
+l1_category: Operations & QA
+l2_category: UI / UX Screenshot Audit
+difficulty: hard
+output_file: careflow_accessibility_triage.xlsx
+
+prompt_file: prompt.txt
+rubric_file: rubric.json
+golden_file: golden_steer_flow.md
+
+modalities:
+  - text
+  - image
+  - pdf
+  - csv
+  - json
+  - xlsx
+
+apis:
+  - google-drive-api
+  - figma-api
+  - slack-api
+  - airtable-api
+  - notion-api
+
+skills:
+  - Image View Skill
+  - Document Understanding Skill
+  - Excel Generation Skill
+
+expected_sheets:
+  - Intake Summary
+  - Visual Blockers
+  - Tracking Noise
+  - Final Review
+
+core_requirements:
+  - Use CareFlow Intake as the active flow
+  - Create careflow_accessibility_triage.xlsx
+  - Include INT-014 INT-018 INT-021 INT-024
+  - Exclude REF-021 and INT-018B
+  - Mark old_audit_v3.pdf as stale
+  - Do not send a message to Marcus or engineering
