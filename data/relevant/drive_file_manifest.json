@@ -1,0 +1,7 @@
+{
+  "folder": "CareFlow_intake_cleanup_design_pile",
+  "owner": "Chad Ramsey",
+  "active_flow": "CareFlow Intake",
+  "expected_output": "careflow_accessibility_triage.xlsx",
+  "relevant_file_count": 20
+}

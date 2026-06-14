@@ -1,0 +1,14 @@
+{
+  "file": "CareFlow remediation review",
+  "owner": "Chad Ramsey",
+  "current_flow": "CareFlow Intake",
+  "frame_set": "CF-INTAKE-REVIEW",
+  "current_issue_ids": [
+    "INT-014",
+    "INT-018",
+    "INT-021",
+    "INT-024"
+  ],
+  "stale_duplicate": "INT-018B",
+  "nearby_noise_flow": "CareFlow Referral"
+}
