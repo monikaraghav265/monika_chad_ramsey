@@ -1,0 +1,76 @@
+{
+  "api": "Slack API",
+  "task": "Chad Ramsey / CareFlow Accessibility Triage",
+  "purpose": "Provide team-thread clarification for the current Intake blocker set and no-message boundary.",
+  "mock_calls": [
+    {
+      "method": "conversations.history",
+      "request": {
+        "channel": "careflow-design",
+        "query": "CareFlow Intake blocker check"
+      },
+      "response": {
+        "channel": "careflow-design",
+        "thread_id": "slack_thread_careflow_418",
+        "messages": [
+          {
+            "sender": "Jordan Tate",
+            "text": "Current blocker set is Intake only. Referral IDs should stay out of the review pass.",
+            "signal": "scope boundary"
+          },
+          {
+            "sender": "Chad Ramsey",
+            "text": "Good. I am keeping this clean for the triage file.",
+            "signal": "output intent"
+          },
+          {
+            "sender": "Jordan Tate",
+            "text": "Use INT-014 INT-018 INT-021 INT-024. INT-018 duplicate B is stale.",
+            "signal": "current issue list"
+          },
+          {
+            "sender": "Marcus Chen",
+            "text": "Tight version for review. No need to ping eng yet.",
+            "signal": "do not send message"
+          }
+        ]
+      }
+    },
+    {
+      "method": "search.messages",
+      "request": {
+        "query": "REF-021 INT-018B"
+      },
+      "response": {
+        "matches": [
+          {
+            "issue_id": "REF-021",
+            "text": "REF-021 belongs to Referral and should not be in Chad's Intake blocker file.",
+            "use_for_final": false
+          },
+          {
+            "issue_id": "INT-018B",
+            "text": "INT-018B is the stale duplicate from the old branch.",
+            "use_for_final": false
+          }
+        ]
+      }
+    }
+  ],
+  "ground_truth_from_this_api": {
+    "include_issue_ids": [
+      "INT-014",
+      "INT-018",
+      "INT-021",
+      "INT-024"
+    ],
+    "exclude_issue_ids": [
+      "REF-021",
+      "INT-018B"
+    ],
+    "do_not_message": [
+      "Marcus Chen",
+      "engineering"
+    ]
+  }
+}
