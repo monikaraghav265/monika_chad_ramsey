@@ -1,7 +1,0 @@
-issue_id,sheet,priority,include
-INT-014,Visual Blockers,P0,yes
-INT-018,Visual Blockers,P0,yes
-INT-021,Visual Blockers,P1,yes
-INT-024,Visual Blockers,P0,yes
-REF-021,Tracking Noise,P2,no
-INT-018B,Tracking Noise,duplicate,no

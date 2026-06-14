@@ -1,7 +1,0 @@
-{
-  "flow": "CareFlow Referral",
-  "issue_id": "REF-021",
-  "issue": "referral card copy overflow",
-  "status": "current",
-  "note": "nearby flow not part of intake cleanup"
-}

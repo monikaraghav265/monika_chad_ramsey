@@ -1,5 +1,0 @@
-issue_id,token,current_hex,background_hex,contrast_ratio,expected_min,current_order,expected_order,result,current_size_px,required_size_px,current_name,expected_name
-INT-014,button.primary.text,#8FA0B5,#E7F1FD,2.9,4.5,,,,,,,
-INT-018,error.summary.focus,,,,,after field group,before field group,fail,,,,
-INT-021,radio.tap_target.mobile,,,,,,,fail,36,44,,
-INT-024,insurance.select.name,,,,,,,fail,,,Choose option,Insurance plan type

@@ -1,6 +1,0 @@
-issue_id,flow,status,severity,issue,include
-INT-014,CareFlow Intake,current,blocker,low contrast primary action,yes
-INT-018,CareFlow Intake,current,blocker,focus order skips error summary,yes
-INT-021,CareFlow Intake,current,major,mobile tap target below 44px,yes
-INT-024,CareFlow Intake,current,blocker,select field missing accessible name,yes
-REF-021,CareFlow Referral,current,major,referral card copy overflow,no
