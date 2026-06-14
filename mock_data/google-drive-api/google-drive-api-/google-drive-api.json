@@ -1,0 +1,118 @@
+{
+  "api": "Google Drive API",
+  "task": "Chad Ramsey / CareFlow Accessibility Triage",
+  "purpose": "Find the active CareFlow Intake cleanup folder and separate current files from referral and stale audit noise.",
+  "mock_calls": [
+    {
+      "method": "files.list",
+      "request": {
+        "query": "CareFlow intake cleanup owner Chad Ramsey"
+      },
+      "response": {
+        "active_folder": {
+          "folder_id": "drv_cf_001",
+          "folder_name": "CareFlow_intake_cleanup_design_pile",
+          "owner": "Chad Ramsey",
+          "active_flow": "CareFlow Intake",
+          "expected_output": "careflow_accessibility_triage.xlsx"
+        },
+        "nearby_noise_folders": [
+          {
+            "folder_id": "drv_cf_referral",
+            "folder_name": "CareFlow_referral_scratch_nearby",
+            "flow": "CareFlow Referral",
+            "use_for_final": false
+          },
+          {
+            "folder_id": "drv_cf_old_v3",
+            "folder_name": "CareFlow_intake_old_audit_v3_archive",
+            "flow": "CareFlow Intake",
+            "source_status": "stale",
+            "use_for_final": false
+          }
+        ]
+      }
+    },
+    {
+      "method": "files.list",
+      "request": {
+        "folder_id": "drv_cf_001"
+      },
+      "response": {
+        "files": [
+          {
+            "file_id": "drv_001",
+            "file_name": "careflow_intake_packet.txt",
+            "role": "current packet",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_002",
+            "file_name": "airtable_current_blockers.csv",
+            "role": "tracker export",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_003",
+            "file_name": "figma_current_frame_notes.json",
+            "role": "current design notes",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_004",
+            "file_name": "accessibility_audit_scrap.pdf",
+            "role": "audit scrap",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_005",
+            "file_name": "IMG_CF_1201_intake_contrast.png",
+            "issue_id": "INT-014",
+            "role": "visual evidence",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_006",
+            "file_name": "IMG_CF_1202_error_focus.png",
+            "issue_id": "INT-018",
+            "role": "visual evidence",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_007",
+            "file_name": "IMG_CF_1203_mobile_targets.png",
+            "issue_id": "INT-021",
+            "role": "visual evidence",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_008",
+            "file_name": "IMG_CF_1204_select_label.png",
+            "issue_id": "INT-024",
+            "role": "visual evidence",
+            "use_for_final": true
+          },
+          {
+            "file_id": "drv_009",
+            "file_name": "referral_flow_export.json",
+            "issue_id": "REF-021",
+            "role": "nearby referral noise",
+            "use_for_final": false
+          },
+          {
+            "file_id": "drv_010",
+            "file_name": "old_audit_v3.pdf",
+            "role": "stale audit",
+            "use_for_final": false
+          }
+        ]
+      }
+    }
+  ],
+  "ground_truth_from_this_api": {
+    "active_flow": "CareFlow Intake",
+    "output_file": "careflow_accessibility_triage.xlsx",
+    "exclude_flow": "CareFlow Referral",
+    "exclude_stale_file": "old_audit_v3.pdf"
+  }
+}
